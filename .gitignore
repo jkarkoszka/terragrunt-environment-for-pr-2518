@@ -1,0 +1,6 @@
+*.log
+.terragrunt-cache
+.terraform
+.vscode
+*.tfstate
+*.tfstate.backup
