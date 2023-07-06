@@ -4,7 +4,8 @@ terraform {
 
 locals {
   account_vars = read_terragrunt_config(find_in_parent_folders("account.hcl")).locals
-  region       = regex("/(eu-west-3|eu-central-1|global)/", get_terragrunt_dir())[0]
+  region_vars  = read_terragrunt_config(find_in_parent_folders("region.hcl")).locals
+  region       = local.region_vars.region
 }
 
 inputs = {
